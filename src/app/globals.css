@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-warm: #F8F6F2;        /* Off-white quente (tom de areia/mármore claro) */
+  --bg-card: #FFFFFF;        /* Branco puro para os cartões */
+  --text-main: #2A2421;      /* Café grafite escuro (leitura nobre, sem ser preto puro) */
+  --text-sub: #6B625D;       /* Castanho/cinza suave para legendas */
+  --accent-wood: #7A4B32;    /* Madeira nogueira da sala */
+  --accent-amber: #D99B26;   /* Toque quente de iluminação */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg-warm) !important;
+  color: var(--text-main);
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Tipografia Serifada de Luxo */
+.font-serif-Luxury {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+/* Botões com Gradiente Quente */
+.bg-warm-button {
+  background: linear-gradient(135deg, #3B2E2A 0%, #2A2421 100%);
+}
+
+.bg-warm-button:hover {
+  background: linear-gradient(135deg, #7A4B32 0%, #5A3521 100%);
+}
+
+/* Gradiente de Texto em Tons de Madeira */
+.wood-text-gradient {
+  background: linear-gradient(135deg, #7A4B32 0%, #A66844 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
