@@ -31,7 +31,6 @@ function BookingModal({
         className="relative w-full max-w-xl rounded-3xl bg-white p-6 sm:p-8 shadow-2xl transition-all"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Cabeçalho */}
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
           <div>
             <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">
@@ -42,7 +41,6 @@ function BookingModal({
             </p>
           </div>
 
-          {/* Inputs de Check-in / Check-out */}
           <div className="flex border border-stone-300 rounded-xl overflow-hidden shadow-sm divide-x divide-stone-300">
             <div className="p-2 px-3 bg-stone-50/50 flex flex-col min-w-[100px]">
               <span className="text-[9px] font-bold tracking-wider text-stone-500 uppercase">
@@ -71,7 +69,6 @@ function BookingModal({
           </div>
         </div>
 
-        {/* Seletor de Plataforma (Airbnb vs Booking) */}
         <div className="mb-6 p-4 rounded-2xl bg-stone-50 border border-stone-200">
           <label className="block text-xs font-semibold text-stone-700 mb-2.5">
             Escolha sua plataforma de reserva:
@@ -106,7 +103,6 @@ function BookingModal({
           </div>
         </div>
 
-        {/* Rodapé com Ações */}
         <div className="flex items-center justify-between border-t border-stone-200 pt-4">
           <button
             type="button"
@@ -174,7 +170,7 @@ export default function HeroSection() {
   return (
     <section 
       style={{ backgroundColor: '#1c140e' }}
-      className="relative w-full min-h-[100dvh] flex flex-col justify-start sm:justify-center overflow-hidden bg-[#1c140e] text-white"
+      className="relative w-full min-h-screen flex flex-col items-center justify-start overflow-hidden bg-[#1c140e] text-white"
     >
       {/* Background Video + Fundo Marrom Café Elegante */}
       <div 
@@ -203,70 +199,38 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Conteúdo Centralizado */}
-      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-[145px] sm:pt-36 lg:pt-40 pb-12 sm:pb-16 text-center text-white flex flex-col items-center w-full my-auto">
+      {/* Conteúdo com fluxo vertical natural sem colisões */}
+      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-36 lg:pt-40 pb-20 text-center text-white flex flex-col items-center w-full">
         
         {/* Título Principal */}
-        <h1 className="text-2xl sm:text-5xl lg:text-7xl font-serif font-light tracking-tight text-white mb-4 sm:mb-6 drop-shadow-2xl leading-tight text-center max-w-4xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-light tracking-tight text-white mb-6 drop-shadow-2xl leading-tight text-center max-w-4xl mx-auto">
           Aconchego, sofisticação e <br className="hidden sm:inline" />
           <span className="italic font-normal text-amber-200/95">experiência impecável.</span>
         </h1>
 
-        {/* Subtítulo Harmônico */}
-        <p className="max-w-xl sm:max-w-2xl mx-auto text-xs sm:text-base lg:text-lg text-stone-200 font-light mb-10 sm:mb-14 leading-relaxed drop-shadow-lg text-center">
+        {/* Subtítulo */}
+        <p className="max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-stone-200 font-light mb-10 sm:mb-12 leading-relaxed drop-shadow-lg text-center">
           Sua casa de temporada na Quadra 208 Norte em Palmas. Quartos climatizados e o equilíbrio perfeito entre o conforto de casa e o padrão de hotelaria.
         </p>
 
-        {/* Grid de Destaques em Glassmorphism */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 w-full text-left hero-grid-simetrico mb-8 sm:mb-10">
-          <div className="p-3.5 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
-            <span className="text-amber-300 text-lg sm:text-xl block mb-1">🚗</span>
+        {/* Grid de Destaques em Tailwind nativo */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full text-left mb-8 sm:mb-10">
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
+            <span className="text-amber-300 text-xl block mb-1.5">🚗</span>
             <h3 className="text-xs sm:text-sm font-semibold text-white">Garagem Privativa</h3>
-            <p className="text-[10px] sm:text-xs text-stone-300 mt-0.5">Para 2+ Veículos Grandes</p>
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Para 2+ Veículos Grandes</p>
           </div>
 
-          <div className="p-3.5 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
-            <span className="text-amber-300 text-lg sm:text-xl block mb-1">❄️</span>
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
+            <span className="text-amber-300 text-xl block mb-1.5">❄️</span>
             <h3 className="text-xs sm:text-sm font-semibold text-white">Quartos Climatizados</h3>
-            <p className="text-[10px] sm:text-xs text-stone-300 mt-0.5">Ar silencioso nos quartos</p>
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Ar silencioso nos quartos</p>
           </div>
 
-          <div className="p-3.5 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
-            <span className="text-amber-300 text-lg sm:text-xl block mb-1">✨</span>
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
+            <span className="text-amber-300 text-xl block mb-1.5">✨</span>
             <h3 className="text-xs sm:text-sm font-semibold text-white">Limpeza Ouro 9,9</h3>
-            <p className="text-[10px] sm:text-xs text-stone-300 mt-0.5">Higienização rigorosa</p>
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Higienização rigorosa</p>
           </div>
 
-          <div className="p-3.5 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
-            <span className="text-amber-300 text-lg sm:text-xl block mb-1">👥</span>
-            <h3 className="text-xs sm:text-sm font-semibold text-white">Até 6 Hóspedes</h3>
-            <p className="text-[10px] sm:text-xs text-stone-300 mt-0.5">Conforto para famílias</p>
-          </div>
-        </div>
-
-        {/* Badges de Avaliação (Abaixo do Grid) */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 w-full">
-          <button 
-            onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#2a1d15]/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-stone-200 shadow-xl hover:border-amber-400/50 transition-all"
-          >
-            <span className="text-amber-400">★</span> Nota 9,7 no Booking <span className="text-stone-400">• Limpeza 9,9</span>
-          </button>
-          <button 
-            onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#2a1d15]/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-stone-200 shadow-xl hover:border-amber-400/50 transition-all"
-          >
-            <span className="text-amber-400">★</span> 5.0 no Airbnb <span className="text-stone-400">• Preferido dos Hóspedes</span>
-          </button>
-        </div>
-
-      </div>
-
-      {/* Modal Embutido */}
-      <BookingModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
-    </section>
-  );
-}
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl
