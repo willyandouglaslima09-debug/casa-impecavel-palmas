@@ -64,4 +64,45 @@ export default function HeroSection() {
         </div>
 
         {/* Título Principal */}
-        <h1 className="text-3xl sm:text-6xl lg:text-7xl font-serif font-light tracking-tight text-white mb
+        <h1 className="text-3xl sm:text-6xl lg:text-7xl font-serif font-light tracking-tight text-white mb-6 drop-shadow-2xl leading-tight">
+          Aconchego, sofisticação e <br className="hidden sm:inline" />
+          <span className="italic font-normal text-amber-200">experiência impecável.</span>
+        </h1>
+
+        {/* Subtítulo */}
+        <p className="max-w-2xl mx-auto text-sm sm:text-lg text-stone-200 font-light mb-10 leading-relaxed drop-shadow-lg">
+          Sua casa de temporada na Quadra 208 Norte em Palmas. Quartos climatizados e o equilíbrio perfeito entre o conforto de casa e o padrão de hotelaria.
+        </p>
+
+        {/* Grid Simétrica de Destaques */}
+        <div className="hero-grid-simetrico text-left">
+          
+          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/90 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
+            <span className="text-amber-300 text-xl block mb-1.5">🚗</span>
+            <h3 className="text-xs sm:text-sm font-semibold text-white">Garagem Privativa</h3>
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Para 2+ Veículos Grandes</p>
+          </div>
+
+          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/90 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
+            <span className="text-amber-300 text-xl block mb-1.5">❄️</span>
+            <h3 className="text-xs sm:text-sm font-semibold text-white">Quartos Climatizados</h3>
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Ar silencioso nos quartos</p>
+          </div>
+
+          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/90 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
+            <span className="text-amber-300 text-xl block mb-1.5">✨</span>
+            <h3 className="text-xs sm:text-sm font-semibold text-white">Limpeza Ouro 9,9</h3>
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Higienização rigorosa</p>
+          </div>
+
+          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/90 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
+            <span className="text-amber-300 text-xl block mb-1.5">👥</span>
+            <h3 className="text-xs sm:text-sm font-semibold text-white">Até 6 Hóspedes</h3>
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Conforto para famílias</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
