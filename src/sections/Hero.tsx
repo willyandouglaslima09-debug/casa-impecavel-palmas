@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-// Modal de Escolha de Plataforma (Airbnb / Booking)
 function BookingModal({
   isOpen,
   onClose,
@@ -172,7 +171,6 @@ export default function HeroSection() {
       style={{ backgroundColor: '#1c140e' }}
       className="relative w-full min-h-screen flex flex-col items-center justify-start overflow-hidden bg-[#1c140e] text-white"
     >
-      {/* Background Video + Fundo Marrom Café Elegante */}
       <div 
         style={{ backgroundColor: '#1c140e' }}
         className="absolute inset-0 z-0 overflow-hidden bg-[#1c140e] pointer-events-none"
@@ -190,7 +188,6 @@ export default function HeroSection() {
           <source src="/videos/casa-impecavel.mp4" type="video/mp4" />
         </video>
 
-        {/* Gradiente Marrom Quente */}
         <div 
           style={{
             background: 'linear-gradient(to bottom, rgba(28,20,14,0.95) 0%, rgba(28,20,14,0.72) 50%, rgba(22,17,13,0.98) 100%)'
@@ -199,21 +196,16 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Conteúdo com fluxo vertical natural sem colisões */}
       <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-36 lg:pt-40 pb-20 text-center text-white flex flex-col items-center w-full">
-        
-        {/* Título Principal */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-light tracking-tight text-white mb-6 drop-shadow-2xl leading-tight text-center max-w-4xl mx-auto">
           Aconchego, sofisticação e <br className="hidden sm:inline" />
           <span className="italic font-normal text-amber-200/95">experiência impecável.</span>
         </h1>
 
-        {/* Subtítulo */}
         <p className="max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-stone-200 font-light mb-10 sm:mb-12 leading-relaxed drop-shadow-lg text-center">
           Sua casa de temporada na Quadra 208 Norte em Palmas. Quartos climatizados e o equilíbrio perfeito entre o conforto de casa e o padrão de hotelaria.
         </p>
 
-        {/* Grid de Destaques em Tailwind nativo */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full text-left mb-8 sm:mb-10">
           <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
             <span className="text-amber-300 text-xl block mb-1.5">🚗</span>
@@ -233,4 +225,35 @@ export default function HeroSection() {
             <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Higienização rigorosa</p>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
+            <span className="text-amber-300 text-xl block mb-1.5">👥</span>
+            <h3 className="text-xs sm:text-sm font-semibold text-white">Até 6 Hóspedes</h3>
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Conforto para famílias</p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-3 w-full">
+          <button 
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#2a1d15]/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-stone-200 shadow-xl hover:border-amber-400/50 hover:bg-[#38271c] transition-all cursor-pointer"
+          >
+            <span className="text-amber-400">★</span> Nota 9,7 no Booking <span className="text-stone-400">• Limpeza 9,9</span>
+          </button>
+          <button 
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#2a1d15]/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-stone-200 shadow-xl hover:border-amber-400/50 hover:bg-[#38271c] transition-all cursor-pointer"
+          >
+            <span className="text-amber-400">★</span> 5.0 no Airbnb <span className="text-stone-400">• Preferido dos Hóspedes</span>
+          </button>
+        </div>
+      </div>
+
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
+    </section>
+  );
+}
