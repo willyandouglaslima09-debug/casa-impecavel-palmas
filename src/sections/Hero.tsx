@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
+// Modal de Reserva / Plataformas
 function BookingModal({
   isOpen,
   onClose,
@@ -25,7 +26,10 @@ function BookingModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 text-stone-900">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4 text-stone-900"
+      onClick={onClose}
+    >
       <div 
         className="relative w-full max-w-xl rounded-3xl bg-white p-6 sm:p-8 shadow-2xl transition-all"
         onClick={(e) => e.stopPropagation()}
@@ -46,11 +50,10 @@ function BookingModal({
                 CHECK-IN
               </span>
               <input
-                type="text"
-                placeholder="DD/MM/AAAA"
+                type="date"
                 value={checkIn}
                 onChange={(e) => setCheckIn(e.target.value)}
-                className="bg-transparent text-xs font-semibold text-stone-800 focus:outline-none"
+                className="bg-transparent text-xs font-semibold text-stone-800 focus:outline-none cursor-pointer"
               />
             </div>
             <div className="p-2 px-3 bg-stone-50/50 flex flex-col min-w-[100px]">
@@ -58,11 +61,10 @@ function BookingModal({
                 CHECKOUT
               </span>
               <input
-                type="text"
-                placeholder="Adicionar data"
+                type="date"
                 value={checkOut}
                 onChange={(e) => setCheckOut(e.target.value)}
-                className="bg-transparent text-xs font-semibold text-stone-800 focus:outline-none"
+                className="bg-transparent text-xs font-semibold text-stone-800 focus:outline-none cursor-pointer"
               />
             </div>
           </div>
@@ -139,6 +141,9 @@ function BookingModal({
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [checkIn, setCheckIn] = useState("");
+  const [checkOut, setCheckOut] = useState("");
+  const [platform, setPlatform] = useState<"airbnb" | "booking">("airbnb");
 
   useEffect(() => {
     const video = videoRef.current;
@@ -166,11 +171,17 @@ export default function HeroSection() {
     };
   }, []);
 
+  const handleSearchAvailability = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
+
   return (
     <section 
       style={{ backgroundColor: '#1c140e' }}
       className="relative w-full min-h-screen flex flex-col items-center justify-start overflow-hidden bg-[#1c140e] text-white"
     >
+      {/* Background Video */}
       <div 
         style={{ backgroundColor: '#1c140e' }}
         className="absolute inset-0 z-0 overflow-hidden bg-[#1c140e] pointer-events-none"
@@ -196,16 +207,77 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-36 lg:pt-40 pb-20 text-center text-white flex flex-col items-center w-full">
+      {/* Conteúdo com recuo superior de 200px para livrar totalmente o cabeçalho */}
+      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-[200px] sm:pt-[220px] pb-20 text-center text-white flex flex-col items-center w-full">
+        
+        {/* Título Principal Completo e Visível */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-light tracking-tight text-white mb-6 drop-shadow-2xl leading-tight text-center max-w-4xl mx-auto">
           Aconchego, sofisticação e <br className="hidden sm:inline" />
           <span className="italic font-normal text-amber-200/95">experiência impecável.</span>
         </h1>
 
-        <p className="max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-stone-200 font-light mb-10 sm:mb-12 leading-relaxed drop-shadow-lg text-center">
+        {/* Subtítulo */}
+        <p className="max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-stone-200 font-light mb-8 sm:mb-10 leading-relaxed drop-shadow-lg text-center">
           Sua casa de temporada na Quadra 208 Norte em Palmas. Quartos climatizados e o equilíbrio perfeito entre o conforto de casa e o padrão de hotelaria.
         </p>
 
+        {/* BARRA VISÍVEL DE CHECK-IN / CHECK-OUT E PLATAFORMA */}
+        <form 
+          onSubmit={handleSearchAvailability}
+          className="w-full max-w-4xl bg-[#2a1d15]/90 backdrop-blur-md border border-white/20 rounded-2xl p-3 sm:p-4 mb-10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-3 text-left"
+        >
+          {/* Check-in */}
+          <div className="flex flex-col w-full md:w-auto flex-1 px-3 py-2 bg-stone-900/40 rounded-xl border border-white/10">
+            <label className="text-[10px] font-bold tracking-wider text-amber-300 uppercase mb-1">
+              📅 Check-in
+            </label>
+            <input 
+              type="date"
+              value={checkIn}
+              onChange={(e) => setCheckIn(e.target.value)}
+              className="bg-transparent text-xs sm:text-sm font-medium text-white focus:outline-none cursor-pointer"
+            />
+          </div>
+
+          {/* Check-out */}
+          <div className="flex flex-col w-full md:w-auto flex-1 px-3 py-2 bg-stone-900/40 rounded-xl border border-white/10">
+            <label className="text-[10px] font-bold tracking-wider text-amber-300 uppercase mb-1">
+              📅 Check-out
+            </label>
+            <input 
+              type="date"
+              value={checkOut}
+              onChange={(e) => setCheckOut(e.target.value)}
+              className="bg-transparent text-xs sm:text-sm font-medium text-white focus:outline-none cursor-pointer"
+            />
+          </div>
+
+          {/* Seletor de Plataforma */}
+          <div className="flex flex-col w-full md:w-auto flex-1 px-3 py-2 bg-stone-900/40 rounded-xl border border-white/10">
+            <label className="text-[10px] font-bold tracking-wider text-amber-300 uppercase mb-1">
+              🏡 Plataforma
+            </label>
+            <select 
+              value={platform}
+              onChange={(e) => setPlatform(e.target.value as "airbnb" | "booking")}
+              className="bg-transparent text-xs sm:text-sm font-medium text-white focus:outline-none cursor-pointer"
+            >
+              <option value="airbnb" className="bg-[#1c140e] text-white">Airbnb</option>
+              <option value="booking" className="bg-[#1c140e] text-white">Booking.com</option>
+            </select>
+          </div>
+
+          {/* Botão de Ação */}
+          <button
+            type="submit"
+            className="w-full md:w-auto px-6 py-3 bg-amber-400 hover:bg-amber-300 text-stone-950 font-semibold text-xs sm:text-sm rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Ver Disponibilidade</span>
+            <span>→</span>
+          </button>
+        </form>
+
+        {/* Grid de Destaques */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full text-left mb-8 sm:mb-10">
           <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
             <span className="text-amber-300 text-xl block mb-1.5">🚗</span>
@@ -232,6 +304,7 @@ export default function HeroSection() {
           </div>
         </div>
 
+        {/* Badges de Avaliação */}
         <div className="flex flex-wrap items-center justify-center gap-3 w-full">
           <button 
             type="button"
@@ -248,6 +321,7 @@ export default function HeroSection() {
             <span className="text-amber-400">★</span> 5.0 no Airbnb <span className="text-stone-400">• Preferido dos Hóspedes</span>
           </button>
         </div>
+
       </div>
 
       <BookingModal 
