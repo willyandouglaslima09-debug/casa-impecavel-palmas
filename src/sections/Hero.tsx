@@ -74,12 +74,12 @@ export default function HeroSection() {
           <span className="italic font-normal text-amber-200/95">experiência impecável.</span>
         </h1>
 
-        {/* Subtítulo (com margem ampliada) */}
+        {/* Subtítulo (com espaçamento ampliado) */}
         <p className="max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-stone-200 font-light mb-12 sm:mb-16 leading-relaxed drop-shadow-lg text-center">
           Sua casa de temporada na Quadra 208 Norte em Palmas. Quartos climatizados e o equilíbrio perfeito entre o conforto de casa e o padrão de hotelaria.
         </p>
 
-        {/* Grid de Destaques */}
+        {/* Grid de Destaques em Glassmorphism */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full text-left hero-grid-simetrico mb-10 sm:mb-12">
           
           <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
@@ -108,7 +108,7 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Badges de Avaliação (Posicionadas após os cartões) */}
+        {/* Badges de Avaliação (Movidas para abaixo dos cartões) */}
         <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 w-full">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#2a1d15]/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-stone-200 shadow-xl">
             <span className="text-amber-400">★</span> Nota 9,7 no Booking <span className="text-stone-400">• Limpeza 9,9</span>
