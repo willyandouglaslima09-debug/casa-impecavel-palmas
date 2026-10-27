@@ -9,24 +9,24 @@ export default function HeroSection() {
           loop
           playsInline
           preload="auto"
-          className="w-full h-full object-cover scale-105"
+          className="w-full h-full object-cover scale-105 opacity-80"
         >
-          <source src="/videos/casa-impecavel.mp4" type="video/mp4" />
+          <source src="/video/casa-impecavel.mp4" type="video/mp4" />
         </video>
 
         {/* Gradiente Escuro Reforçado para Leitura Perfeita no Mobile */}
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/85 via-stone-950/65 to-stone-950/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/90 via-stone-950/70 to-stone-950/95" />
       </div>
 
-      {/* Conteúdo do Hero - pt-40 no mobile para afastar do Header Fixo */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-16 sm:pt-44 text-center text-white">
+      {/* Conteúdo do Hero - pt-44 (176px) para afastar completamente do Header Fixo no Mobile */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-44 pb-16 sm:pt-48 text-center text-white">
         
-        {/* Badges de Avaliação */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-900/60 backdrop-blur-md border border-white/20 text-xs font-medium text-stone-200 shadow-lg">
+        {/* Badges de Avaliação com Espaçamento Corrigido */}
+        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-6 sm:mb-8">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-900/80 backdrop-blur-md border border-white/20 text-xs font-medium text-stone-200 shadow-lg">
             <span className="text-amber-400">★</span> Nota 9,7 no Booking <span className="text-stone-400">• Limpeza 9,9</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-900/60 backdrop-blur-md border border-white/20 text-xs font-medium text-stone-200 shadow-lg">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-900/80 backdrop-blur-md border border-white/20 text-xs font-medium text-stone-200 shadow-lg">
             <span className="text-amber-400">★</span> 5.0 no Airbnb <span className="text-stone-400">• Preferido dos Hóspedes</span>
           </span>
         </div>
@@ -45,25 +45,25 @@ export default function HeroSection() {
         {/* Grid Simétrica de Destaques */}
         <div className="hero-grid-simetrico text-left">
           
-          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/60 backdrop-blur-md border border-white/20 hover:border-amber-400/30 transition-all shadow-xl">
+          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/70 backdrop-blur-md border border-white/20 hover:border-amber-400/30 transition-all shadow-xl">
             <span className="text-amber-300 text-xl block mb-1.5">🚗</span>
             <h3 className="text-xs sm:text-sm font-semibold text-white">Garagem Privativa</h3>
             <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Para 2+ Veículos Grandes</p>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/60 backdrop-blur-md border border-white/20 hover:border-amber-400/30 transition-all shadow-xl">
+          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/70 backdrop-blur-md border border-white/20 hover:border-amber-400/30 transition-all shadow-xl">
             <span className="text-amber-300 text-xl block mb-1.5">❄️</span>
             <h3 className="text-xs sm:text-sm font-semibold text-white">Quartos Climatizados</h3>
-            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Ar silencioso nos quartos</p>
+            <p className="text-xs sm:text-sm text-stone-300 mt-0.5">Ar silencioso nos quartos</p>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/60 backdrop-blur-md border border-white/20 hover:border-amber-400/30 transition-all shadow-xl">
+          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/70 backdrop-blur-md border border-white/20 hover:border-amber-400/30 transition-all shadow-xl">
             <span className="text-amber-300 text-xl block mb-1.5">✨</span>
             <h3 className="text-xs sm:text-sm font-semibold text-white">Limpeza Ouro 9,9</h3>
             <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Higienização rigorosa</p>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/60 backdrop-blur-md border border-white/20 hover:border-amber-400/30 transition-all shadow-xl">
+          <div className="p-4 sm:p-5 rounded-2xl bg-stone-900/70 backdrop-blur-md border border-white/20 hover:border-amber-400/30 transition-all shadow-xl">
             <span className="text-amber-300 text-xl block mb-1.5">👥</span>
             <h3 className="text-xs sm:text-sm font-semibold text-white">Até 6 Hóspedes</h3>
             <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Conforto para famílias</p>
