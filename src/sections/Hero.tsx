@@ -12,13 +12,13 @@ export default function HeroSection() {
     const playVideo = () => {
       video.muted = true;
       video.play().catch(() => {
-        // Trata a restrição de autoplay do Safari/iOS
+        // Trata a restrição de autoplay nativa do Safari/iOS
       });
     };
 
     playVideo();
 
-    // Desbloqueia a reprodução no iOS no primeiro toque ou rolar de página
+    // Desbloqueia a reprodução no iOS/Safari no primeiro toque ou rolar de página
     const handleInteraction = () => {
       playVideo();
       window.removeEventListener("touchstart", handleInteraction);
@@ -39,21 +39,23 @@ export default function HeroSection() {
       style={{ backgroundColor: '#1c140e' }}
       className="relative w-full min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-[#1c140e] text-white"
     >
-      {/* Container do Vídeo + Fundo Marrom Café Elegante */}
+      {/* Background Video + Fundo Marrom Café Elegante */}
       <div 
         style={{ backgroundColor: '#1c140e' }}
         className="absolute inset-0 z-0 overflow-hidden bg-[#1c140e] pointer-events-none"
       >
         <video
           ref={videoRef}
-          src="/video/casa-impecavel.mp4"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover scale-105 opacity-65 pointer-events-none"
-        />
+        >
+          <source src="/video/casa-impecavel.mp4" type="video/mp4" />
+          <source src="/videos/casa-impecavel.mp4" type="video/mp4" />
+        </video>
 
         {/* Gradiente Marrom Quente de Alto Contraste */}
         <div 
