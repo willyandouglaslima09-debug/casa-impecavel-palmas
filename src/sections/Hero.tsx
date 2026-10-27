@@ -102,4 +102,23 @@ export default function HeroSection() {
           <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
             <span className="text-amber-300 text-xl block mb-1.5">❄️</span>
             <h3 className="text-xs sm:text-sm font-semibold text-white">Quartos Climatizados</h3>
-            <p className="text-[11px] sm:text-xs text-stone-300 mt-0
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Ar silencioso nos quartos</p>
+          </div>
+
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
+            <span className="text-amber-300 text-xl block mb-1.5">✨</span>
+            <h3 className="text-xs sm:text-sm font-semibold text-white">Limpeza Ouro 9,9</h3>
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Higienização rigorosa</p>
+          </div>
+
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
+            <span className="text-amber-300 text-xl block mb-1.5">👥</span>
+            <h3 className="text-xs sm:text-sm font-semibold text-white">Até 6 Hóspedes</h3>
+            <p className="text-[11px] sm:text-xs text-stone-300 mt-0.5">Conforto para famílias</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
