@@ -18,7 +18,6 @@ export default function HeroSection() {
 
     playVideo();
 
-    // Desbloqueia reprodução no toque/scroll para vencer o modo de economia de energia do iOS
     const handleInteraction = () => {
       playVideo();
       window.removeEventListener("touchstart", handleInteraction);
@@ -66,32 +65,22 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Conteúdo Centralizado com Recuo Harmonioso para o Header */}
+      {/* Conteúdo Centralizado */}
       <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-36 lg:pt-40 pb-16 text-center text-white flex flex-col items-center w-full my-auto">
         
-        {/* Badges de Avaliação */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-6 sm:mb-8 w-full">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#2a1d15]/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-stone-200 shadow-xl">
-            <span className="text-amber-400">★</span> Nota 9,7 no Booking <span className="text-stone-400">• Limpeza 9,9</span>
-          </span>
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#2a1d15]/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-stone-200 shadow-xl">
-            <span className="text-amber-400">★</span> 5.0 no Airbnb <span className="text-stone-400">• Preferido dos Hóspedes</span>
-          </span>
-        </div>
-
         {/* Título Principal */}
         <h1 className="text-3xl sm:text-5xl lg:text-7xl font-serif font-light tracking-tight text-white mb-6 drop-shadow-2xl leading-tight text-center max-w-4xl mx-auto">
           Aconchego, sofisticação e <br className="hidden sm:inline" />
           <span className="italic font-normal text-amber-200/95">experiência impecável.</span>
         </h1>
 
-        {/* Subtítulo */}
-        <p className="max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-stone-200 font-light mb-10 leading-relaxed drop-shadow-lg text-center">
+        {/* Subtítulo (com margem ampliada) */}
+        <p className="max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-stone-200 font-light mb-12 sm:mb-16 leading-relaxed drop-shadow-lg text-center">
           Sua casa de temporada na Quadra 208 Norte em Palmas. Quartos climatizados e o equilíbrio perfeito entre o conforto de casa e o padrão de hotelaria.
         </p>
 
-        {/* Grid de Destaques em Glassmorphism */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full text-left hero-grid-simetrico">
+        {/* Grid de Destaques */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full text-left hero-grid-simetrico mb-10 sm:mb-12">
           
           <div className="p-4 sm:p-5 rounded-2xl bg-[#2a1d15]/85 backdrop-blur-md border border-white/20 hover:border-amber-400/40 transition-all shadow-2xl">
             <span className="text-amber-300 text-xl block mb-1.5">🚗</span>
@@ -118,6 +107,17 @@ export default function HeroSection() {
           </div>
 
         </div>
+
+        {/* Badges de Avaliação (Posicionadas após os cartões) */}
+        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 w-full">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#2a1d15]/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-stone-200 shadow-xl">
+            <span className="text-amber-400">★</span> Nota 9,7 no Booking <span className="text-stone-400">• Limpeza 9,9</span>
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#2a1d15]/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-stone-200 shadow-xl">
+            <span className="text-amber-400">★</span> 5.0 no Airbnb <span className="text-stone-400">• Preferido dos Hóspedes</span>
+          </span>
+        </div>
+
       </div>
     </section>
   );
