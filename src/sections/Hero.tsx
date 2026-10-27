@@ -1,20 +1,21 @@
-import Image from 'next/image';
-
 export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-stone-950">
-      {/* Container da Imagem de Fundo com Overlay Quente e Elegante */}
+      {/* Container do Vídeo de Fundo com Overlay Quente e Elegante */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <Image
-          src="/images/hero-fachada.jpg"
-          alt="Fachada Casa Impecável"
-          fill
-          priority
-          quality={90}
-          className="object-cover object-center scale-105 transition-transform duration-1000"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/hero-video-frame.jpg"
+          className="w-full h-full object-cover scale-105"
+        >
+          <source src="/videos/casa-impecavel.mp4" type="video/mp4" />
+        </video>
+
         {/* Gradiente de alto contraste para destacar os textos */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-stone-950/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-stone-950/95" />
       </div>
 
       {/* Conteúdo do Hero com Tipografia em Destaque */}
